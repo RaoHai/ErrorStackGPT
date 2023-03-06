@@ -6,6 +6,6 @@ const api = new ChatGPTAPI({
 
 export default async function handler(req, res) {
     const { text = 'hello world' } = req.query;
-    const res = await api.sendMessage(text)
-    res.status(200).json({ result: res.text });
+    const result = await api.sendMessage(text)
+    res.status(200).json({ result: result.text });
 }
