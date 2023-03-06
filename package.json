@@ -4,15 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build-function && next build",
+    "build-function": "ncc build functions/chatgpt.js -o pages/api",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "chatgpt": "^5.0.7",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
   }
 }
