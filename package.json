@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build-function && next build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider && npm run build-function && next build",
     "build-function": "ncc build functions/chatgpt.js -o pages/api",
     "start": "next start",
     "lint": "next lint"
